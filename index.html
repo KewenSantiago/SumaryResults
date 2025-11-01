@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumário de resultados</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/index.css">
+</head>
+<body>
+    <main class="results-summary-component">
+
+        <section class="result-panel">
+            <h2 class="result-panel__title">Seu resultado</h2>
+
+            <div class="result-circle">
+                <span class="result-circle__score">76</span>
+                <span class="result-circle__total">de 100</span>
+            </div>
+
+            <h3 class="result-panel__subtitle">Ótimo</h3>
+            <p class="result-panel__description">
+                Você obteve uma pontuação superior a 65% das pessoas que fizeram esses testes.
+            </p>
+        </section>
+
+        <section class="summary-panel">
+            <h2 class="summary-panel__title">Sumário</h2>
+
+            <ul class="summary-list">
+                <li class="summary-item summary-item--reaction">
+                    <div class="summary-item__title">
+                        <img src="./assets/icons/icon-reaction.svg" alt="">
+                        <span>Reação</span>
+                    </div>
+                    <div class="summary-item__score">
+                        <span>80</span> / 100
+                    </div>
+                </li>
+
+                <li class="summary-item summary-item--memory">
+                    <div class="summary-item__title">
+                        <img src="./assets/icons/icon-memory.svg" alt="">
+                        <span>Memória</span>
+                    </div>
+                    <div class="summary-item__score">
+                        <span>92</span> / 100
+                    </div>
+                </li>
+
+                <li class="summary-item summary-item--verbal">
+                    <div class="summary-item__title">
+                        <img src="./assets/icons/icon-verbal.svg" alt="">
+                        <span>Verbal</span>
+                    </div>
+                    <div class="summary-item__score">
+                        <span>61</span> / 100
+                    </div>
+                </li>
+
+                <li class="summary-item summary-item--visual">
+                    <div class="summary-item__title">
+                        <img src="./assets/icons/icon-visual.svg" alt="">
+                        <span>Visual</span>
+                    </div>
+                    <div class="summary-item__score">
+                        <span>73</span> / 100
+                    </div>
+                </li>
+            </ul>
+
+            <button class="continue-button">Continue</button>
+
+        </section>
+
+    </main>
+</body>
+</html>

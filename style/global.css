@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: "Hanken Grotesk", sans-serif;
+
+    --bg-card-blue: hsl(241, 81%, 54%);
+    --bg-card-white: white;
+    --bg-circle-gradient: hsla(256, 72%, 46%, 1);
+
+    --bg-page: hsl(221, 100%, 96%);
+
+    --text-reaction: hsl(0, 100%, 67%);
+    --bg-reaction: hsla(0, 100%, 67%, 0.1);
+    --text-memory: hsl(39, 100%, 56%);
+    --bg-memory: hsla(39, 100%, 56%, 0.1);
+    --text-verbal: hsl(166, 100%, 37%);
+    --bg-verbal: hsla(166, 100%, 37%, 0.1);
+    --text-visual: hsl(234, 85%, 45%);
+    --bg-visual: hsla(234, 85%, 45%, 0.1);
+
+    --text-dark: hsl(224, 30%, 27%);
+    --text-light: hsl(241, 100%, 89%);
+}
+
+body {
+    font-family: var;
+    background-color: var(--bg-page);
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.results-summary-component {
+    display: flex;
+    max-width: 736px;
+    box-shadow: 0 1rem 3rem hsla(224,30%, 27%, 0.1);
+    border-radius: 2rem;
+    font-family: var(--font-family);
+}
+
+.result-panel {
+    width: 50%;
+    background-color: var(--bg-card-blue);
+    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-panel {
+    width: 50%;
+    background-color: var(--bg-card-white);
+    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+}
+
+.result-panel__title {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.result-circle {
+    width: 12.5rem;
+    height: 12.5rem;
+    border-radius: 50%;
+    background: linear-gradient(
+        var(--bg-circle-gradient),
+        hsla(241, 72%, 46%, 0.1)
+    );
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-circle__score {
+    color: white;
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.result-circle__total {
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.result-panel__subtitle {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.result-panel__description {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    padding: 0 1rem;
+}
+
+.summary-panel__title {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.summary-list {
+    list-style-type: none;
+    margin-bottom: 2rem;
+}
+
+.summary-item {
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.summary-item__title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+}
+
+.summary-item__score {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.summary-item__score span {
+    font-weight: 800;
+}
+
+.summary-item--reaction {
+    background-color: var(--bg-reaction);
+}
+
+.summary-item--reaction .summary-item__title {
+    color: var(--text-reaction);
+}
+
+.summary-item--memory {
+    background-color: var(--bg-memory);
+}
+.summary-item--memory .summary-item__title {
+    color: var(--text-memory);
+}
+
+.summary-item--verbal {
+    background-color: var(--bg-verbal);
+}
+.summary-item--verbal .summary-item__title {
+    color: var(--text-verbal);
+}
+
+.summary-item--visual {
+    background-color: var(--bg-visual);
+}
+.summary-item--visual .summary-item__title {
+    color: var(--text-visual);
+}
+
+.continue-button {
+    width: 100%; 
+    padding: 1rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--text-dark);
+    color: white;
+
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+    background: var(--bg-card-blue);
+}
+
+@media (max-width: 700px) {
+
+    /* 1. Ajusta o <body> */
+    body {
+        /* No mobile, não queremos centralizar o card.
+           'display: block' remove o 'display: flex' do desktop.
+        */
+        display: block;
+        
+        /* O fundo no mobile é branco, não o rosa/lilás */
+        background-color: var(--bg-card-white);
+    }
+
+    /* 2. Ajusta o container principal */
+    .results-summary-component {
+        /* Muda a direção do flex para vertical (um em cima do outro) */
+        flex-direction: column;
+        
+        /* Remove a sombra do card, já que ele ocupa a tela toda */
+        box-shadow: none;
+        
+        /* Remove o arredondamento do container principal */
+        border-radius: 0;
+        
+        /* Remove a largura máxima para que ele ocupe 100% */
+        max-width: 100%;
+    }
+
+    /* 3. Ajusta os painéis */
+    .result-panel,
+    .summary-panel {
+        /* Faz os dois painéis ocuparem 100% da largura */
+        width: 100%;
+    }
+
+    /* 4. Corrige os cantos arredondados (o detalhe mais importante!) */
+    .result-panel {
+        /* Remove o arredondamento de cima, mantém o de baixo,
+           exatamente como na imagem do design mobile.
+           (top-left, top-right, bottom-right, bottom-left)
+        */
+        border-radius: 0 0 2rem 2rem;
+    }
+
+    .summary-panel {
+        /* Remove todo o arredondamento do painel de sumário */
+        border-radius: 0;
+    }
+}
